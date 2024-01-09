@@ -1,7 +1,9 @@
-package main
+package data
 
-import "fmt"
+var variableName int64
 
-func data() {
-	fmt.Println("Data function is in another folder, but in same package main")
+func Variables() {
+	variableName = 100
+	message := "Hi there!"
+	message = message + "Append String"
 }

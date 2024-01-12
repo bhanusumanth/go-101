@@ -2,7 +2,20 @@ package main
 
 import "fmt"
 
+type Laptop struct {
+	model  string
+	cpu    string
+	price  float32
+	memory uint32
+}
+
+func (lappy Laptop) PrintLaptop() {
+	fmt.Printf("%s %s %f %d\n", lappy.model, lappy.cpu, lappy.price, lappy.memory)
+}
+
 func main() {
+	var dell Laptop = Laptop{"inspiron", "i3", 600.0, 8}
+	dell.PrintLaptop()
 	var operation string
 	var num1, num2 int
 	fmt.Println("Calculator")

@@ -14,6 +14,10 @@ import (
 const endpoint = "https://cex.io/api/ticker/%s/USD"
 
 func GetRate(currency string) (*models.Rate, error) {
+	if len(currency) < 2 {
+		return nil, fmt.Errorf("invalid currency code given")
+	}
+
 	uppercaseCurrency := strings.ToUpper(currency)
 	res, err := http.Get(fmt.Sprintf(endpoint, uppercaseCurrency))
 	var cexResponseObj CEXResponse
